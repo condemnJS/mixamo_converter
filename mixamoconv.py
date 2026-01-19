@@ -24,7 +24,7 @@ from pathlib import Path
 import re
 import logging
 import bpy
-from bpy_types import Object
+from bpy.types import Object
 from math import pi
 from mathutils import Vector, Quaternion
 
