@@ -569,8 +569,11 @@ def hip_to_root(armature, use_x=True, use_y=True, use_z=True, on_ground=True, us
     hipsbaker.select_set(False)
 
     bpy.ops.object.mode_set(mode='POSE')
-    hips.bone.select = True
+    for pb in root.pose.bones:
+        pb.select = False
+    hips.select = True
     root.data.bones.active = hips.bone
+
 
     c_hips_copy_loc = hips.constraints.new(type='COPY_LOCATION')
     c_hips_copy_loc.target = hipsbaker
